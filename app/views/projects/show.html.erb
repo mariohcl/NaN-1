@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @project.title %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
+
+<h4>Integrantes</h4>
+
+<pre>
+  <%= @project.users.count() %>
+</pre>
+
+<%= form_with(url: save_users_path, method: :post) do %>
+<input type="hidden" name="project_id" value= "<%= @project.id %>">
+<ul style="list-style: none">
+
+  <% @users.each do |u| %>
+  <li>
+    <input
+    type="checkbox"
+    <% if ( @project.users.include?(u) ) %>checked="checked" <% end %>
+    name="checkbox_user_[]"
+    value="<%= u.id %>"/>
+    <%= u.name %>
+  </li>
+  <% end %>
+
+</ul>
+
+<%= submit_tag("Guardar") %>
+
+<% end %>
