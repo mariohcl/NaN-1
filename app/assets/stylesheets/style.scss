@@ -1,0 +1,152 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+a{
+  font-family: 'Poppins', sans-serif;
+}
+
+h1{
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+}
+
+.wrap-top{
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  background: red;
+  position: fixed;
+  left: 50%;
+  margin-left: -300px;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+
+  a{
+    padding:18px 38px;
+    text-decoration: none;
+    font-size: 0.9em;
+    margin: 0 3px;
+
+    &:nth-child(1){}
+
+    &:nth-child(2){}
+  }
+}
+
+.main-wrap-content{
+  width: 100%;
+  padding: 5% 0;
+  background-color: #f5f5f5;
+
+  .head-wrap{
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    height: 230px;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: flex-end;
+
+    h1{
+      color: white;
+      font-size: 3em;
+    }
+    p{
+      color: grey;
+      font-size: 0.8em;
+      font-family: 'Playfair Display', serif;
+    }
+  }
+  .content-wrap{
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+
+    .card-project{
+      background-color: white;
+      box-shadow: 0px 10px 10px #dedede;
+      padding: 35px;
+      box-sizing: border-box;
+      margin-bottom: 30px;
+      display: flex;
+
+      .icon{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-right: 20px;
+        background-size: cover;
+        background-position: center;
+      }
+
+      &:nth-child(1){
+        .icon{
+          background-image: url('pro-1.jpg');
+        }
+      }
+      &:nth-child(1){
+        .icon{
+          background-image: url('pro-2.jpg');
+        }
+      }
+      .info-project{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 80%;
+
+        h2{
+          font-family: 'Poppins', sans-serif;
+          font-weight: normal;
+          font-size: 1.1em;
+          margin: 0;
+        }
+
+        .actions{
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          background: #f7f7f7;
+          padding: 10px 20px;
+          box-sizing: border-box;
+          margin-top: 10px;
+
+          a{
+            text-decoration: none;
+            &.show{
+              &:before{
+                font-family: "Font Awesome 5 Free"; font-weight: 400; content: "\f06e";
+                color: #4CAF50;
+              }
+            }
+            &.edit{
+              &:before{
+                font-family: "Font Awesome 5 Free"; font-weight: 400; content: "\f044";
+                color: #03A9F4;
+              }
+            }
+            &.delete{
+              &:before{
+                font-family: "Font Awesome 5 Free"; font-weight: 400; content: "\f2ed";
+                color: #E91E63;
+              }
+            }
+          }
+        }
+
+      }
+
+    }
+  }
+}
+
+.bg-color-wrap{
+  background-color: #242424;
+}
+.wrap-content-med{
+  padding-top: 2%;
+}

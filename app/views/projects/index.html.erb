@@ -1,6 +1,39 @@
-<p id="notice"><%= notice %></p>
+<section class="main-wrap-content bg-color-wrap">
+  <section class="head-wrap">
 
-<h1>Projects</h1>
+    <p id="notice"><%= notice %></p>
+
+    <h1>Projects</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit Facilis.</p>
+
+  </section>
+</section>
+
+<section class="main-wrap-content wrap-content-med">
+  <section class="content-wrap">
+<% @projects.each do |project| %>
+    <article class="card-project">
+      <div class="icon"></div>
+      <div class="info-project">
+        <h2><%= project.title %></h2>
+
+        <div class="actions">
+          <div>
+            <%= link_to '', project, class: "show" %>
+            <%= link_to '', edit_project_path(project), class: "edit" %>
+          </div>
+
+          <div>
+            <%= link_to '', project, class: "delete", method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </div>
+      </div>
+    </article>
+  <% end %>
+  </section>
+</section>
+
+
 
 <table>
   <thead>
