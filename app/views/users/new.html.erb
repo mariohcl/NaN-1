@@ -1,5 +1,18 @@
-<h1>New User</h1>
+<section class="main-wrap-content bg-color-wrap">
+  <section class="head-wrap">
 
-<%= render 'form', user: @user %>
+    <h1>Nueva Persona</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit Facilis.</p>
 
-<%= link_to 'Back', users_path %>
+  </section>
+</section>
+
+<section class="main-wrap-content wrap-content-med">
+  <section class="content-wrap">
+
+    <%= render 'form', user: @user %>
+
+    <%= link_to 'Volver', users_path, class: 'access-button' %>
+
+  </section>
+</section>

@@ -25,7 +25,7 @@ class ProjectsController < ApplicationController
     end
   end
 
-  redirect_to @project, notice: 'Projecto was pulentili created.'
+  redirect_to @project, notice: 'Ajustes realizados'
 
   end
 
@@ -59,7 +59,7 @@ class ProjectsController < ApplicationController
   def update
     respond_to do |format|
       if @project.update(project_params)
-        format.html { redirect_to @project, notice: 'Project was successfully updated.' }
+        format.html { redirect_to @project, notice: 'Ajustes realizados exitosamente' }
         format.json { render :show, status: :ok, location: @project }
       else
         format.html { render :edit }

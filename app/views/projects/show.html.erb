@@ -1,36 +1,73 @@
+<section class="main-wrap-content bg-color-wrap">
+  <section class="head-wrap head-wrap-proyectos">
+
+    <h1><span>Título:</span> <%= @project.title %></h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit Facilis.</p>
+
+  </section>
+</section>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @project.title %>
-</p>
+<section class="main-wrap-content wrap-content-med">
+  <section class="content-wrap">
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+    <div class="image-pro">
 
-<h4>Integrantes</h4>
+      <div class="img-pro"></div>
 
-<pre>
-  <%= @project.users.count() %>
-</pre>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse accusantium sunt deleniti est. Non illum, ad nemo. Natus obcaecati non earum. Quia animi debitis ipsam odit ipsa iste ab ducimus.</p>
+    </div>
 
-<%= form_with(url: save_users_path, method: :post) do %>
-<input type="hidden" name="project_id" value= "<%= @project.id %>">
-<ul style="list-style: none">
+    <div class="info-proyect-intern">
+      <div class="actions">
+        <div>
+          <%= link_to '', edit_project_path(@project), class: "edit" %>
+        </div>
 
-  <% @users.each do |u| %>
-  <li>
-    <input
-    type="checkbox"
-    <% if ( @project.users.include?(u) ) %>checked="checked" <% end %>
-    name="checkbox_user_[]"
-    value="<%= u.id %>"/>
-    <%= u.name %>
-  </li>
-  <% end %>
+        <div>
+          <%= link_to '', @project, class: "delete", method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div>
 
-</ul>
+    </div>
 
-<%= submit_tag("Guardar") %>
+    <div class="integrantes-wrap">
+      <h2>Integrantes</h2>
 
-<% end %>
+      <h4>Número de integrantes en el proyecto: <span><%= @project.users.count() %></span></h4>
+
+      <%= form_with(url: save_users_path, method: :post, class: "integrantes") do %>
+      <input type="hidden" name="project_id" value= "<%= @project.id %>">
+      <ul style="list-style: none">
+
+        <% @users.each_with_index do |u, index| %>
+        <li class="tg-list-item">
+          <input
+          type="checkbox"
+          <% if ( @project.users.include?(u) ) %>checked="checked" <% end %>
+          name="checkbox_user_[]"
+          value="<%= u.id %>"
+          class="tgl tgl-light"
+          id="cb<%= index + 1 %>" />
+          <%= u.name %>
+          <label class="tgl-btn" for="cb<%= index + 1 %>"></label>
+        </li>
+        <% end %>
+
+
+
+      </ul>
+
+      <%= submit_tag("Guardar") %>
+
+      <% end %>
+
+    </div>
+
+  </section>
+</section>
+
+<section class="wrap-bottom">
+  <%= link_to 'Nuevo Proyecto', new_project_path %>
+</section>

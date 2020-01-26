@@ -1,6 +1,19 @@
-<h1>Editing User</h1>
+<section class="main-wrap-content bg-color-wrap">
+  <section class="head-wrap head-wrap-proyectos">
 
-<%= render 'form', user: @user %>
+    <h1><span>Editar:</span> <%= @user.name %></h1>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+  </section>
+</section>
+
+
+<section class="main-wrap-content wrap-content-med">
+  <section class="content-wrap">
+
+    <%= render 'form', user: @user %>
+
+    <%= link_to 'Ver Persona', @user, class: 'access-button' %>
+    <%= link_to 'Volver', users_path, class: 'access-button' %>
+
+  </section>
+</section>

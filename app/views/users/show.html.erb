@@ -1,9 +1,56 @@
+<section class="main-wrap-content bg-color-wrap">
+  <section class="head-wrap head-wrap-proyectos">
+
+    <h1><span>Nombre:</span> <%= @user.name %></h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit Facilis.</p>
+
+  </section>
+</section>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<section class="main-wrap-content wrap-content-med">
+  <section class="content-wrap">
+
+    <div class="image-pro">
+
+      <div class="img-pro"></div>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse accusantium sunt deleniti est. Non illum, ad nemo. Natus obcaecati non earum. Quia animi debitis ipsam odit ipsa iste ab ducimus.</p>
+    </div>
+
+    <div class="info-proyect-intern">
+      <div class="actions">
+        <div>
+          <%= link_to '', edit_user_path(@user), class: "edit" %>
+        </div>
+
+        <div>
+          <%= link_to '', @user, class: "delete", method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="integrantes-wrap">
+
+      <h2>Proyectos</h2>
+
+      <h4>Número de proyectos: <span><%= @user.projects.count() %></span></h4>
+
+      <ul class="list-pro">
+        <% @user.projects.each do |p| %>
+          <li><%= p.title %></li>
+        <% end %>
+      </ul>
+
+
+    </div>
+
+  </section>
+</section>
+
+<section class="wrap-bottom">
+  <%= link_to 'Crear Nueva Persona', new_user_path, class: "user" %>
+</section>

@@ -1,6 +1,19 @@
-<h1>Editing Project</h1>
+<section class="main-wrap-content bg-color-wrap">
+  <section class="head-wrap head-wrap-proyectos">
 
-<%= render 'form', project: @project %>
+    <h1><span>Editar:</span> <%= @project.title %></h1>
 
-<%= link_to 'Show', @project %> |
-<%= link_to 'Back', projects_path %>
+  </section>
+</section>
+
+
+<section class="main-wrap-content wrap-content-med">
+  <section class="content-wrap">
+
+    <%= render 'form', project: @project %>
+
+    <%= link_to 'Ver Proyecto', @project, class: 'access-button' %>
+    <%= link_to 'Volver', projects_path, class: 'access-button' %>
+
+  </section>
+</section>

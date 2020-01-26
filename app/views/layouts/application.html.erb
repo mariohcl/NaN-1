@@ -15,12 +15,12 @@
   <body>
 
 <section class="wrap-top">
-  <a href="#">lorem ipsum</a>
-  <a href="#">lorem ipsum</a>
+  <%= link_to "Proyectos (#{Project.all.count})", projects_path %>
+  <%= link_to "Personas (#{User.all.count})", users_path %>
 </section>
 
-
     <%= yield %>
+
 
   </body>
 </html>
